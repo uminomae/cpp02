@@ -1,5 +1,6 @@
 #include "Fixed.hpp"
 
+//ex00
 Fixed::Fixed(){
 	std::cout << "Default constructor called" << std::endl;
 	RawBits = 0;
@@ -22,21 +23,25 @@ Fixed::~Fixed(){
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed::Fixed(const int i_num){
-	RawBits = i_num << frct_bits;
-}
-
-Fixed::Fixed(const float fp_num){
-	RawBits = (int)(roundf(fp_num * (1 << frct_bits)));
-}
-
 int Fixed::getRawBits()const{
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return RawBits;
 }
 
 void Fixed::setRawBits(int const raw){
 	RawBits = raw;
+}
+
+
+//ex01
+Fixed::Fixed(const int i_num){
+	std::cout << "Int constructor called" << std::endl;
+	RawBits = i_num << frct_bits;
+}
+
+Fixed::Fixed(const float fp_num){
+	std::cout << "Float constructor called" << std::endl;
+	RawBits = (int)(roundf(fp_num * (1 << frct_bits)));
 }
 
 float Fixed::toFloat()const{

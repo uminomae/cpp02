@@ -1,6 +1,6 @@
 #include "Fixed.hpp"
 
-#define DEB
+// #define DEB
 
 void myPutStr(std::string s1, std::string s2, std::string color);
 

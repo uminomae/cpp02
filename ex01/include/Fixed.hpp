@@ -8,19 +8,18 @@
 class Fixed{
 private:
 	int RawBits;
-	static const int frct_bits = 8;//ゼロ初期化のあとにあらためて初期化を行えます。staticメンバ変数の型が、const な整数型か、const な enum型の場合に限っては、宣言と同時に初期化子を与えられます。
+	static const int frct_bits = 8;
 public:
+//ex00
 	Fixed();
 	Fixed(const Fixed &num);
 	Fixed &operator = (const Fixed &num);
 	~Fixed();
-	
-	Fixed(const int num);
-	Fixed(const float num);
-	
 	int getRawBits()const;
 	void setRawBits(int const raw);
-
+//ex01
+	Fixed(const int num);
+	Fixed(const float num);
 	float toFloat()const;
 	int toInt()const;
 
